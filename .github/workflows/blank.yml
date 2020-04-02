@@ -24,9 +24,10 @@ jobs:
 
     - name: GitHub Pages
       uses: crazy-max/ghaction-github-pages@v1.3.0
+      if: success()
       with:
         # GitHub repository where assets will be deployed (default current)
         # Build directory to deploy
-        build_dir: .  
+        build_dir: .
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
