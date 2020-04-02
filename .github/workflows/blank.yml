@@ -18,7 +18,7 @@ jobs:
           mkdir public
           mv index.js public
           mv index.html public
-          cat > public/.env.js <<EOL
+          cat > public/env.js <<EOL
           export const CONFIG = {
               EMOJI: '✅'
           };

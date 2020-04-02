@@ -1,4 +1,4 @@
-import { CONFIG } from './.env.js';
+import { CONFIG } from './env.js';
 
 const replacementElement = document.getElementById('replacement');
 
