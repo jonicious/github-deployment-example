@@ -13,16 +13,19 @@ jobs:
         name: Checkout
         uses: actions/checkout@v1
       -
+        shell: bash
         name: Build
+        env:
+          EMOJI: ${{ secrets.Emoji }}
         run: |
           mkdir public
           mv index.js public
           mv index.html public
-          cat > public/env.js <<EOL
-          export const CONFIG = {
-              EMOJI: '🤝'
-          };
-          EOL
+          cat > public/env.js <<EOT
+            export const CONFIG = {
+              EMOJI: "$EMOJI"
+            };
+          EOT
       -
         name: Deploy
         if: success()
