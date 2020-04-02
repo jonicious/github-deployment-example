@@ -13,10 +13,21 @@ jobs:
         name: Checkout
         uses: actions/checkout@v1
       -
+        name: Build
+        run: |
+          mkdir public
+          mv index.js public
+          mv index.html public
+          cat > .env.js <<EOL
+          export const CONFIG = {
+              EMOJI: '✅'
+          };
+          EOL
+      -
         name: Deploy
         if: success()
         uses: crazy-max/ghaction-github-pages@v1.3.0
         with:
-          build_dir: .
+          build_dir: public
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
