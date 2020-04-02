@@ -20,7 +20,7 @@ jobs:
           mv index.html public
           cat > public/env.js <<EOL
           export const CONFIG = {
-              EMOJI: '✅'
+              EMOJI: '🤝'
           };
           EOL
       -
